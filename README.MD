@@ -18,6 +18,6 @@ Show the result on the webpage
 ## Resources
 [podiumaanhuis.be]: https://www.podiumaanhuis.be/
 [Starter code]: https://github.com/pmcp/ehbdev4werkstuk
-
+[Presentation]: https://docs.google.com/presentation/d/1tlhfJPTmw0MP4kfKSdszo4bUSKwG9xRcuSmzhbkiNaw/edit?usp=sharing
 
  
