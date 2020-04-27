@@ -16,8 +16,8 @@ One feature is the option to filter the video entries based on genres and audien
 - COMMENTS COMMENTS COMMENTS
 
 ## Resources
-[podiumaanhuis.be]: https://www.podiumaanhuis.be/
-[Starter code]: https://github.com/pmcp/ehbdev4werkstuk
-[Presentation]: https://docs.google.com/presentation/d/1tlhfJPTmw0MP4kfKSdszo4bUSKwG9xRcuSmzhbkiNaw/edit?usp=sharing
+https://www.podiumaanhuis.be/
+https://github.com/pmcp/ehbdev4werkstuk
+https://docs.google.com/presentation/d/1tlhfJPTmw0MP4kfKSdszo4bUSKwG9xRcuSmzhbkiNaw/edit?usp=sharing
 
  
