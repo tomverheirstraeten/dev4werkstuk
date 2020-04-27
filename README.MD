@@ -13,6 +13,7 @@ One feature is the option to filter the video entries based on genres and audien
 - Try to avoid side effects as much as possible.
 - Write tests for at least 2 functions
 - Show the result on the webpage
+- COMMENTS COMMENTS COMMENTS
 
 ## Resources
 [podiumaanhuis.be]: https://www.podiumaanhuis.be/
