@@ -2,8 +2,11 @@
 // Stolen from: Node.js for Front-End Developers by Garann Means (p. 9-10)require('dotenv').load();
 require('dotenv').config();
 const fetch = require('node-fetch');
+
+
 const apiKey = process.env.apiKey;
 const apiUrl = process.env.apiUrl;
+
 let settings = {
   method: "Get",
   headers: {
@@ -13,7 +16,6 @@ let settings = {
    }
   };
 
-  
   fetch(apiUrl+'/items', settings)
   .then(res => res.json())
   .then((json) => {
