@@ -1,3 +1,5 @@
+"use strict";
+
 // A very basic web server in node.js
 // Stolen from: Node.js for Front-End Developers by Garann Means (p. 9-10)require('dotenv').load();
 require('dotenv').config();
@@ -6,21 +8,68 @@ const fetch = require('node-fetch');
 
 const apiKey = process.env.apiKey;
 const apiUrl = process.env.apiUrl;
+let items;
 
 let settings = {
-  method: "Get",
-  headers: {
-    'Authorization': `Bearer ${apiKey}`, 
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'accept-version': '1.0.0'
-   }
-  };
+	method: "Get",
+	headers: {
+		'Authorization': `Bearer ${apiKey}`,
+		'Content-Type': 'application/x-www-form-urlencoded',
+		'accept-version': '1.0.0'
+	}
+};
 
-  fetch(apiUrl+'/items', settings)
-  .then(res => res.json())
-  .then((json) => {
-    console.log(`Got the response, there are ${json.items.length} entries`)
-  });
+/////// DATA OPVRAGEN //////
+
+let getdata = () => {
+	return new Promise(function (resolve, reject) {
+		fetch(apiUrl + '/items', settings)
+			//put respons in json//
+			.then(res => res.json())
+			//get data out of json
+			.then((json) => {
+
+				resolve(json)
+			})
+	})
+}
+
+//////put data in variable////
+getdata().then(json => {
+	items = json.items
+	console.log(items);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///bewerken van items ///
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -34,13 +83,13 @@ var checkMimeType = true;
 
 console.log("Starting web server at " + serverUrl + ":" + port);
 
-http.createServer( function(req, res) {
-  console.log('starting server')
+http.createServer(function (req, res) {
+	console.log('starting server')
 	var filename = "/index.html";
 	var ext = path.extname(filename);
 	var localPath = __dirname;
 	var validExtensions = {
-		".html" : "text/html",
+		".html": "text/html",
 		".js": "application/javascript",
 		".css": "text/css",
 		".txt": "text/plain",
@@ -51,6 +100,7 @@ http.createServer( function(req, res) {
 		".woff2": "application/font-woff2"
 	};
 
+
 	var validMimeType = true;
 	var mimeType = validExtensions[ext];
 	if (checkMimeType) {
@@ -59,8 +109,8 @@ http.createServer( function(req, res) {
 
 	if (validMimeType) {
 		localPath += filename;
-		fs.exists(localPath, function(exists) {
-			if(exists) {
+		fs.exists(localPath, function (exists) {
+			if (exists) {
 				console.log("Serving file: " + localPath);
 				getFile(localPath, res, mimeType);
 			} else {
@@ -68,7 +118,7 @@ http.createServer( function(req, res) {
 				res.writeHead(404);
 				res.end();
 			}
-    });
+		});
 
 	} else {
 		console.log("Invalid file extension detected: " + ext + " (" + filename + ")")
@@ -77,8 +127,8 @@ http.createServer( function(req, res) {
 }).listen(port, serverUrl);
 
 function getFile(localPath, res, mimeType) {
-	fs.readFile(localPath, function(err, contents) {
-		if(!err) {
+	fs.readFile(localPath, function (err, contents) {
+		if (!err) {
 			res.setHeader("Content-Length", contents.length);
 			if (mimeType != undefined) {
 				res.setHeader("Content-Type", mimeType);

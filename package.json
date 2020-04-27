@@ -21,6 +21,7 @@
   "homepage": "https://github.com/pmcp/ehbdev4werkstuk#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.3"
   }
 }
